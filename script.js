@@ -17,8 +17,9 @@ function displayProjects(projects) {
     projectCard.classList.add('project-card');
     projectCard.innerHTML = `
       <h3>${project.name}</h3>
-      <p>${project.description || 'Sem descrição.'}</p>
-      <a href="${project.html_url}" target="_blank">Ver no GitHub</a>
+      <p>${project.description || 'Sem descrição disponível.'}</p>
+      <a href="${project.html_url}" target="_blank" class="btn">Ver Projeto</a>
+      ${project.homepage ? `<a href="${project.homepage}" target="_blank" class="btn">Ver Site</a>` : ''}
     `;
     projectList.appendChild(projectCard);
   });
