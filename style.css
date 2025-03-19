@@ -1,10 +1,20 @@
 /* style.css */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #121212;
+  --card-color: #1e1e1e;
+  --text-color: #ffffff;
+  --font-family: 'Poppins', sans-serif;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #1a1a1a;
-  color: #ffffff;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
 .container {
@@ -16,7 +26,8 @@ body {
 
 header {
   text-align: center;
-  padding: 50px 0;
+  padding: 60px 0;
+  background-color: var(--card-color);
 }
 
 .profile-img {
@@ -24,16 +35,19 @@ header {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid var(--primary-color);
 }
 
 h1 {
   font-size: 2.5rem;
   margin: 10px 0;
+  color: var(--primary-color);
 }
 
 h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: var(--primary-color);
 }
 
 #projects .project-grid {
@@ -43,14 +57,51 @@ h2 {
 }
 
 .project-card {
-  background-color: #2d2d2d;
+  background-color: var(--card-color);
   padding: 20px;
   border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
 }
 
 footer {
   text-align: center;
   padding: 20px 0;
   margin-top: 50px;
-  background-color: #2d2d2d;
+  background-color: var(--card-color);
 }
